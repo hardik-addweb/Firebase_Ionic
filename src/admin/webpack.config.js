@@ -6,7 +6,7 @@ const BASE_DIR = path.resolve('./src/admin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: path.resolve(BASE_DIR, './app/main.ts'),
+  entry: path.resolve(BASE_DIR, './src/main.ts'),
   output: {
     path: BASE_DIR,
     filename: 'admin.bundle.js',
@@ -36,6 +36,6 @@ module.exports = {
   ],
   devServer: {
     contentBase: BASE_DIR,
-    port: 9000,
+    port: 4200,
   },
 };

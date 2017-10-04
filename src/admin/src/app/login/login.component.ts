@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserListing } from '../../../../providers';
 
 @Component({
-  selector: 'app-dashboard',
-  template: require('./dashboard.component.html'),
+  selector: 'app-login',
+  template: require('./login.component.html'),
 })
 export class LoginComponent implements OnInit {
   constructor(private userListing : UserListing) {}

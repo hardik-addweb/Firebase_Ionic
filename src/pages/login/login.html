@@ -1,0 +1,18 @@
+<ion-content>
+    <ion-list padding style="text-align:center;">
+        <img src="../assets/image/addweb.png">
+    </ion-list>
+    <ion-list padding>
+        <ion-item>
+            <ion-label color="danger" floating>Email</ion-label>
+            <ion-input type="text" [(ngModel)]="loginForm.email" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="danger" floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="loginForm.password" required></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list padding>
+        <button ion-button full color="danger" (click)="doLogin()" padding>Login</button>
+    </ion-list>
+</ion-content>

@@ -1,16 +1,17 @@
-import { Component, OnInit,ViewChild} from '@angular/core';
-import { UserComponent } from '../users/users.component';
-import { LoginComponent } from '../login/login.component'
-import { Nav, Platform } from 'ionic-angular';
+import { Component, OnInit} from '@angular/core';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 
 @Component({
   selector: 'app-dashboard',
   template: require('./dashboard.component.html'),
 })
 export class DashboardComponent implements OnInit {
-  constructor() {
+  constructor(public slimLoadingBarService:SlimLoadingBarService) {
    }
    ngOnInit(){
+   }
+   ngAfterViewInit(){
+     this.slimLoadingBarService.complete();
    }
 
 }

@@ -1,0 +1,54 @@
+<div class = "page-header">
+  <h1>
+    <i class="fa fa-user" aria-hidden="true"></i> Users ragistration form
+      <small></small>
+   </h1>
+ </div>
+
+<div id="floating-button" [routerLink]="['/users']" ><p class="plus"><i class="fa fa-angle-left" aria-hidden="true"></i></p></div>
+<div>
+  <!-- <form name="myForm" [(ngModel)]="ragister" (ngSubmit)="doSubmitAlldata()"> -->
+  <img src="data:image/png;base64,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" >
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Profile Picture</label>
+      <input type="file" required accept="image/*" (change)="readThis(file)" name="file" [(ngModel)]="ragisterData.image">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Firstname</label>
+      <input type="text" class="form-control" maxlength="10" [(ngModel)]="ragisterData.firstname" name="firstname" placeholder="Firstname" required>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Lastname</label>
+      <input type="text" class="form-control" maxlength="10" [(ngModel)]="ragisterData.lastname" name="lastname" placeholder="Lastname" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" [(ngModel)]="ragisterData.email" name='email' placeholder="Email" required>
+      <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control"  placeholder="Password" [(ngModel)]="ragisterData.password" name="password" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Role of User</label>
+
+      <select class="form-control" [(ngModel)]="ragisterData.users" name="users" required>
+        <option value="admin">Admin</option>
+        <option value="user" selected>User</option>
+      </select>
+
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">
+        Check me out
+      </label>
+    </div>
+    <button  type="submit" *ngIf="!id" class="btn btn-primary" (click)='doSubmitAlldata()' [routerLink]="['/users']">Save</button>
+    <button type="submit" *ngIf="id" class="btn btn-primary" (click)='doUpdatedata(ragisterData)' [routerLink]="['/users']">Update</button>
+
+  <!-- </form> -->
+</div>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewContainerRef } from '@angular/core';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 
- constructor() {
-
+ constructor(public slimLoadingBarService:SlimLoadingBarService,public toastr : ToastsManager,vcr:ViewContainerRef) {
+   slimLoadingBarService.start();
+     this.toastr.setRootViewContainerRef(vcr);
  }
 
 }

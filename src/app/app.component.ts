@@ -5,25 +5,39 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ContactsPage } from "../pages/contacts/contacts";
+import { LoginPage } from "../pages/login/login";
+
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = HomePage;
+  loginUser:any=false;
+  rootPage: any;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,private storage: Storage) {
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
-    ];
+
+    storage.get('loginuser')
+    .then((val) => {
+      console.log('>>>>>><<<<>>>',val);
+      this.loginUser = val;
+
+      if(this.loginUser){
+        this.rootPage=HomePage;
+        this.loginMenu();
+      }else{
+        this.rootPage=LoginPage;
+        this.logoutMenu();
+      }
+    });
+
 
   }
 
@@ -40,5 +54,19 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+  loginMenu(){
+    this.pages = [
+      { title: 'Home', component: HomePage },
+      { title: 'List', component: ListPage },
+      { title: 'Logout', component: ListPage }
+    ];
+  }
+  logoutMenu(){
+    this.pages = [
+      { title: 'Home', component: HomePage },
+      { title: 'Login', component:LoginPage  },
+      { title: 'Contacts', component: ContactsPage },
+    ];
   }
 }

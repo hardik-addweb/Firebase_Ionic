@@ -25,7 +25,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.json', '.ts'],
+    extensions: ['.js', '.json', '.ts','css'],
   },
   plugins: [
     new webpack.ProvidePlugin({
